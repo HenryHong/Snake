@@ -1,0 +1,14 @@
+﻿table {
+    border-collapse: collapse;
+	table-layout: fixed;
+	font-size: 100%;
+}
+ 
+td {
+    width: 1em;
+    height: 1em;
+    border: 1px solid black;
+	text-align: center;
+	padding: 0;
+}
+ 
