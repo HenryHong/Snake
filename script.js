@@ -8,6 +8,7 @@ var FoodLoc;
 var SBodyHtml = '<div style="background-color:lightgreen;height:100%;width:100%"></div>';
 var SHeadHtml = '<div style="background-color:green;height:100%;width:100%"></div>';
 var FoodHtml = '<div style="background-color:black;position:relative;width:50%;height:50%;left:25%"></div>';
+var Timer;
 
 //Creates the pixel board
 function Board(containerId, rowsCount, colsCount) {
@@ -188,16 +189,29 @@ window.addEventListener('keydown', function (e) {
 	var dir = e.keyCode;
 	if ((dir == 40) && (direction != "down") && (direction != "up")){
 		direction = "down";
+		clearInterval(this.timer);
+		FrameMove();
+		timer = setInterval( function(){FrameMove();}, 200);
+		
 	}
 	else if ((dir == 39)  && (direction != "right") && (direction != "left")){
 		direction = "right";
+		clearInterval(this.timer);
+		FrameMove();
+		timer = setInterval( function(){FrameMove();}, 200);
 	}
 	else if ((dir == 38)  && (direction != "up") && (direction != "down")){
 		direction = "up";
+		clearInterval(this.timer);
+		FrameMove();
+		timer = setInterval( function(){FrameMove();}, 200);
 
 	}
 	else if ((dir == 37)  && (direction != "left") && (direction != "right")){
 		direction = "left";
+		clearInterval(this.timer);
+		FrameMove();
+		timer = setInterval( function(){FrameMove();}, 200);
 	}
 	else {
 		console.log("The direction does not make sense");
@@ -224,5 +238,4 @@ SnakeBody2.update('0:0');
 SnakeArr.push(SnakeBody1);
 SnakeArr.push(SnakeBody2);
 
-//var timer = setInterval( function(){frameMove();}, 500);
 var timer = setInterval( function(){FrameMove();}, 200);
